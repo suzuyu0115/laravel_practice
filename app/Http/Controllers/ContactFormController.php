@@ -14,10 +14,12 @@ class ContactFormController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         // $contacts = ContactForm::select('id', 'name', 'title', 'created_at')
         // ->get();
+
+        $search = $request->search;
 
         // ページネーション対応
         $contacts = ContactForm::select('id', 'name', 'title', 'created_at')
